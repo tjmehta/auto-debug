@@ -1,0 +1,41 @@
+{
+  "name": "auto-debug",
+  "version": "1.0.0",
+  "description": "Uses debug but automatically assumes file as log namespace. Optionally logs line numbers, function arguments, and even traces. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -c -t 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/auto-debug"
+  },
+  "keywords": [
+    "debug",
+    "auto",
+    "filenames",
+    "line",
+    "numbers",
+    "trace",
+    "stack",
+    "files",
+    "namespace",
+    "arguments",
+    "functions"
+  ],
+  "author": "Tejesh Mehta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/auto-debug/issues"
+  },
+  "homepage": "https://github.com/tjmehta/auto-debug",
+  "dependencies": {
+    "101": "^0.14.0",
+    "callsite": "^1.0.0",
+    "debug": "^2.1.3"
+  },
+  "devDependencies": {
+    "code": "^1.3.0",
+    "lab": "^5.5.0"
+  }
+}
