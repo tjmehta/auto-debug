@@ -10,7 +10,7 @@ var expect = Code.expect;
 
 var assign = require('101/assign');
 var sinon = require('sinon');
-var proxyquire = require('proxyquire');
+var proxyquire = require('proxyquire'); proxyquire.preserveCache();
 var debugSpies = require('./fixtures/debug-spies');
 var createDebugSpy = debugSpies.create.bind(debugSpies);
 var AutoDebug = proxyquire('../lib/auto-debug', {
@@ -75,7 +75,7 @@ describe('auto-debug', function () {
         (function () {
           debug(); // this line number
         })();
-        var spies = debugSpies.spies; console.log('OPTS', debug.opts);
+        var spies = debugSpies.spies;
         var name = Object.keys(spies)[0];
         expect(name).to.exist();
         var spy = spies[name];

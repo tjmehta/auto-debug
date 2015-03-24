@@ -21,8 +21,8 @@ var AutoDebug = proxyquire('../lib/auto-debug', {
 var debug = require('../index')();
 
 describe('auto-debug', function () {
-
-  describe('name opts', function () {
+  var ctx = {};
+  describe('options', function () {
     beforeEach(function (done) {
       AutoDebug.debugMap = {};
       // hack: proxyquire is doing something strange..
@@ -31,41 +31,20 @@ describe('auto-debug', function () {
       done();
     });
 
-    describe('ext', function () {
-      beforeEach(function (done) {
-        debug.options({
-          name: {
-            delimeter: ':',
-            ext: true
-          }
-        });
+    describe('local', function () {
+      it('should throw an error for non-object', function (done) {
+        expect(debug.options.bind(debug, 'bogus')).to.throw(Error, /object/);
         done();
       });
-      it('should log the line and anonymous function name', function (done) {
-        debug();
-        var spies = debugSpies.spies;
-        var name = Object.keys(spies)[0];
-        expect(name).to.exist();
-        expect(name).to.equal('test:name-opts.test.js');
+      it('get undefined opts', function (done) {
+        var x = debug.options();
         done();
       });
     });
-    describe('delimiter', function () {
-      beforeEach(function (done) {
-        debug.options({
-          name: {
-            delimeter: '/',
-            ext: true
-          }
-        });
-        done();
-      });
+    describe('global', function () {
       it('should log the line and anonymous function name', function (done) {
-        debug();
-        var spies = debugSpies.spies;
-        var name = Object.keys(spies)[0];
-        expect(name).to.exist();
-        expect(name).to.equal('test/name-opts.test.js');
+        var createDebug = require('../index');
+        expect(createDebug.bind(null, 'bogus')).to.throw(Error, /object/);
         done();
       });
     });
