@@ -12,11 +12,11 @@ var debug = require('auto-debug')();
 module.exports = function someFunction () {
   debug('hello'); // this line 5
   /*
-    equivalent to require('debug')(lib:example)('someFunction 5 hello')
-  */
-  /*
     prints:
     lib:example someFunction 5 hello
+  */
+  /*
+    equivalent to require('debug')(lib:example)('someFunction 5 hello')
   */
 };
 ```
@@ -29,11 +29,11 @@ var debug = require('auto-debug')();
 function add (a, b, c) {
   debug.trace(); // this line 5
   /*
-    equivalent to require('debug')(lib:example2)('someFunction 5 hello')
+    prints:
+    lib:example add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16
   */
   /*
-    prints:
-    lib:example someFunction 5 hello { a:10, b:20, c:30} from main lib/example2.js:16
+    equivalent to require('debug')(lib:example2)('add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16')
   */
 };
 
