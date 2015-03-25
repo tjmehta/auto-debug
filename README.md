@@ -30,7 +30,7 @@ function add (a, b, c) {
   debug.trace(); // this line 5
   /*
     prints:
-    lib:example add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16
+    lib:example2 add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16
   */
   /*
     equivalent to require('debug')(lib:example2)('add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16')
