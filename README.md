@@ -25,7 +25,7 @@ module.exports = function someFunction () {
 ```js
 // lib/example2.js
 var debug = require('auto-debug')();
-
+process.env.DEBUG_TRACE = 'true'; // since debug trace can be noisey it only prints when DEBUG_TRACE is not set
 function add (a, b, c) {
   debug.trace(); // this line 5
   /*
