@@ -1,6 +1,6 @@
 {
   "name": "auto-debug",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uses debug but automatically assumes file as log namespace. Optionally logs line numbers, function arguments, and even traces. ",
   "main": "index.js",
   "scripts": {
