@@ -183,7 +183,7 @@ describe('auto-debug', function () {
     });
     describe('DEBUG_TRACE = false', function () {
       beforeEach(function (done) {
-        process.env.DEBUG_TRACE = false;
+        delete process.env.DEBUG_TRACE;
         debug.options({
           func: false,
           line: false,
