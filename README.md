@@ -1,5 +1,6 @@
 # auto-debug
-Uses debug but automatically assumes file as log namespace. Optionally logs line numbers, function arguments, and even traces.
+Uses [debug](http://github.com/tj/debug) but automatically assumes filenames as the log namespace.  
+Optionally logs line numbers, function arguments, and caller location.
 
 
 ## Usage
