@@ -1,5 +1,5 @@
 # auto-debug
-Uses [debug](http://github.com/tj/debug) but automatically assumes filenames as the log namespace.  
+Uses [debug](http://github.com/tj/debug) but automatically assumes filenames as the log namespace.
 Optionally logs line numbers, function arguments, and caller location.
 
 
@@ -14,10 +14,10 @@ module.exports = function someFunction () {
   debug('hello'); // this line 5
   /*
     prints:
-    lib:example someFunction 5 hello
+    lib/example.js:5 someFunction hello
   */
   /*
-    equivalent to require('debug')(lib:example)('someFunction 5 hello')
+    equivalent to require('debug')('lib/example.js')(':5 someFunction hello')
   */
 };
 ```
@@ -31,10 +31,10 @@ function add (a, b, c) {
   debug.trace(); // this line 5
   /*
     prints:
-    lib:example2 add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16
+    lib/example2.js:5 add hello { a:10, b:20, c:30} from main lib/example2.js:16
   */
   /*
-    equivalent to require('debug')(lib:example2)('add 5 hello { a:10, b:20, c:30} from main lib/example2.js:16')
+    equivalent to require('debug')('lib/example2.js')(':5 add hello { a:10, b:20, c:30} from main lib/example2.js:16')
   */
 };
 

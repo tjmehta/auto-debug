@@ -61,8 +61,8 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledTwice).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['%s %s %o %s', 'yolo', 54, {}, 'from test/trace.test.js:55']);
-        expect(spy.secondCall.args).to.deep.equal(['%s %s %o %s', 'anonymous', 57, {}, 'from test/trace.test.js:58']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:%s %s %o %s', 54, 'yolo', {}, 'from test/trace.test.js:55']);
+        expect(spy.secondCall.args).to.deep.equal(['\b:%s %s %o %s', 57, 'anonymous', {}, 'from test/trace.test.js:58']);
         done();
       });
     });
@@ -93,7 +93,7 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledOnce).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['%s %o %s', 89, {}, 'from test/trace.test.js:90']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:%s %o %s', 89, {}, 'from test/trace.test.js:90']);
         done();
       });
     });
