@@ -55,7 +55,7 @@ describe('auto-debug', function () {
         debug.options({
           name: {
             delimeter: '/',
-            ext: true
+            ext: false
           }
         });
         done();
@@ -65,7 +65,7 @@ describe('auto-debug', function () {
         var spies = debugSpies.spies;
         var name = Object.keys(spies)[0];
         expect(name).to.exist();
-        expect(name).to.equal('test/name-opts.test.js');
+        expect(name).to.equal('test/name-opts.test');
         done();
       });
     });

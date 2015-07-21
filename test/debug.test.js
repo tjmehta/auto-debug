@@ -46,7 +46,7 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledOnce).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['anonymous 42']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:42 anonymous']);
         done();
       });
       it('should log the line and function name', function (done) {
@@ -58,7 +58,7 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledOnce).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['hello 54']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:54 hello']);
         done();
       });
     });
@@ -80,7 +80,7 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledOnce).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['76']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:76']);
         done();
       });
       it('should log the line and function name', function (done) {
@@ -92,7 +92,7 @@ describe('auto-debug', function () {
         expect(name).to.exist();
         var spy = spies[name];
         expect(spy.calledOnce).to.be.true();
-        expect(spy.firstCall.args).to.deep.equal(['88']);
+        expect(spy.firstCall.args).to.deep.equal(['\b:88']);
         done();
       });
     });
